@@ -6,3 +6,18 @@
 [![Codacy Badge](https://app.codacy.com/project/badge/Grade/6a82eaf82a6448f9ac8e9b73f8976eb2)](https://app.codacy.com/gh/vb64/pipeline.gazprom.infotech/dashboard?utm_source=gh&utm_medium=referral&utm_content=&utm_campaign=Badge_grade)
 
 The free, open source PipelineGazpromInfotech library is designed to making infotech.xml files.
+
+## Installation
+
+```bash
+pip install pipeline-gazprom-infotech
+```
+
+## Development
+
+```bash
+git clone git@github.com:vb64/pipeline.gazprom.infotech.git
+cd pipeline.gazprom.infotech
+make setup PYTHON_BIN=/path/to/python3
+make tests
+```
