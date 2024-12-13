@@ -11,6 +11,7 @@ class TestIpl(TestBase):
     def test_new(self):
         """Check new IPL instance."""
         from pipeline_gazprom_infotech.ipl import Infotech, Inspect, PigPass, Weld, LineObj, Defect
+        from pipeline_gazprom_infotech import Typeobj
 
         xml = Infotech()
         assert xml.root is not None
@@ -20,6 +21,7 @@ class TestIpl(TestBase):
         assert xml.add_weld({Weld.TypeId: "222"}) is not None
         assert xml.add_lineobj({LineObj.TypeId: "333"}) is not None
         assert xml.add_defekt({Defect.TypeId: "444"}) is not None
+        assert xml.add_types({"444": "zzz"}) is None
 
         fname = self.build("ipl_empty.xml")
         xml.save(fname)
@@ -29,3 +31,4 @@ class TestIpl(TestBase):
         assert Weld.Title in text
         assert LineObj.Title in text
         assert Defect.Title in text
+        assert Typeobj.Name in text
