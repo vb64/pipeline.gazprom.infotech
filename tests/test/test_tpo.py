@@ -37,3 +37,11 @@ class TestTpo(TestBase):
         assert xml.add_defect(
           route, "1", "1.1", "xxx", None, None, None, None, None, None, None, None
         ) is not None
+
+    def test_get_abc(self):
+        """Check get_abc function."""
+        from pipeline_gazprom_infotech.tpo import get_abc
+
+        assert "критический" in get_abc('A')
+        assert "ремонт" in get_abc('B')
+        assert "малозначительный" in get_abc('')
