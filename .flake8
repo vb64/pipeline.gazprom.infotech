@@ -1,0 +1,4 @@
+[flake8]
+max_line_length = 120
+per-file-ignores =
+    pipeline_gazprom_infotech/codes/pypeline.py:E501
