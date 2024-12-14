@@ -89,3 +89,4 @@ class TestTpo(TestBase):
         route = xml.add_route("1", 100, "xxx.dwg")
         item = xml.add_element(route, "1", "yyy")
         assert xml.set_oboznach(item, "zzz") is None
+        assert xml.set_sdt(item, 10, 1, 2, 100, 1400, 10.5) is None
