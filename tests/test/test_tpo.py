@@ -80,3 +80,12 @@ class TestTpo(TestBase):
             xml.set_total_length("xxx")
         assert 'Неверная длина участка' in str(err.value)
         assert xml.set_total_length(100.0) is None
+
+    def test_set_oboznach(self):
+        """Check set_oboznach method."""
+        from pipeline_gazprom_infotech.tpo import Infotech
+
+        xml = Infotech()
+        route = xml.add_route("1", 100, "xxx.dwg")
+        item = xml.add_element(route, "1", "yyy")
+        assert xml.set_oboznach(item, "zzz") is None
