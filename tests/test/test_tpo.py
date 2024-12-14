@@ -68,3 +68,28 @@ class TestTpo(TestBase):
 
         now = datetime.now()
         assert xml.set_titul(pipeline_name, now, now, "", "", "", "", {}) is None
+
+    def test_set_total_length(self):
+        """Check set_total_length method."""
+        from pipeline_gazprom_infotech.tpo import Infotech
+        from pipeline_gazprom_infotech import InfotechError
+
+        xml = Infotech()
+
+        with pytest.raises(InfotechError) as err:
+            xml.set_total_length("xxx")
+        assert 'Неверная длина участка' in str(err.value)
+        assert xml.set_total_length(100.0) is None
+
+    def test_methods(self):
+        """Check some TPO methods."""
+        from pipeline_gazprom_infotech.tpo import Infotech
+
+        xml = Infotech()
+        route = xml.add_route("1", 100, "xxx.dwg")
+        item = xml.add_element(route, "1", "yyy")
+        assert xml.set_oboznach(item, "zzz") is None
+        assert xml.set_sdt(item, 10, 1, 2, 100, 1400, 10.5) is None
+
+        assert xml.add_defect(route, "1.1", "1", "111", 10, 1, 2, 10, 10, 2.1, "A", "-") is not None
+        assert xml.add_defect(route, "1.1", "1", "111", 10, 1, 2, 10, 10, 2.1, "A", "xxx") is not None

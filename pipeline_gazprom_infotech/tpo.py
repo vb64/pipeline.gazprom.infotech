@@ -223,7 +223,7 @@ class Infotech(InfotechBase):
             elem.attrib[Elem.Length] = str(length)
 
     def add_element(self, route, num, name):
-        """Set inspection attribute of total length."""
+        """Add ELEM item."""
         attribs = {
           Elem.Num: num,
           Elem.Vid: name,
