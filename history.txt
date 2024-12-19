@@ -1,3 +1,6 @@
+19.12.2024 ver.1.1
+------------------
+
 - Fix wrong items in TYPEOBJS section of the IPL xml.
 
 13.12.2024 ver.1.0
