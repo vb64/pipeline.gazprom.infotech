@@ -2,7 +2,7 @@
 from datetime import datetime
 from lxml import etree as ET
 
-from . import InfotechBase, Typeobj, InfotechError, it_date
+from . import InfotechBase, InfotechError, it_date
 from .codes.pypeline import PIPELINE_BY_NAMES
 
 
@@ -14,6 +14,16 @@ def get_abc(danger_code):
         return "Допустимый (ремонт)"
     # C
     return "Допустимый (малозначительный)"
+
+
+class Typeobj:
+    """Attributes of the TYPEOBJS TPO Infotech XML section."""
+
+    Section = 'TYPEOBJS'
+    Title = 'TYPEOBJ'
+
+    Id = 'IDTYPEOBJ'
+    Name = 'TITLE'
 
 
 class Inspect:
@@ -290,3 +300,11 @@ class Infotech(InfotechBase):
                 item.attrib[Defect.Meropr] = action
 
         return item
+
+    def add_types(self, it_dict):
+        """Add given dict to TYPEOBJS."""
+        for code, name in it_dict.items():
+            ET.SubElement(self.typobjs, Typeobj.Title, {
+              Typeobj.Id: code,
+              Typeobj.Name: name,
+            })

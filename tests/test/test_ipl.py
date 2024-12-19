@@ -10,8 +10,7 @@ class TestIpl(TestBase):
 
     def test_new(self):
         """Check new IPL instance."""
-        from pipeline_gazprom_infotech.ipl import Infotech, Inspect, PigPass, Weld, LineObj, Defect
-        from pipeline_gazprom_infotech import Typeobj
+        from pipeline_gazprom_infotech.ipl import Infotech, Inspect, PigPass, Weld, LineObj, Defect, Typeobj
 
         xml = Infotech()
         assert xml.root is not None
@@ -31,4 +30,4 @@ class TestIpl(TestBase):
         assert Weld.Title in text
         assert LineObj.Title in text
         assert Defect.Title in text
-        assert Typeobj.Name in text
+        assert Typeobj.SubItem in text
