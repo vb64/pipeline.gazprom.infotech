@@ -11,16 +11,6 @@ class InfotechError(Exception):
     """Infotech exceptions."""
 
 
-class Typeobj:
-    """Attributes of the TYPEOBJS Infotech XML section."""
-
-    Section = 'TYPEOBJS'
-    Title = 'TYPEOBJ'
-
-    Id = 'IDTYPEOBJ'
-    Name = 'TITLE'
-
-
 class InfotechBase:
     """Abstract base Infotech XML class."""
 
@@ -35,11 +25,3 @@ class InfotechBase:
         """
         with open(file_name, 'wb') as out:
             out.write(ET.tostring(self.root, xml_declaration=True, encoding=encoding, pretty_print=True))
-
-    def add_types(self, it_dict):
-        """Add given dict to TYPEOBJS."""
-        for code, name in it_dict.items():
-            ET.SubElement(self.typobjs, Typeobj.Title, {
-              Typeobj.Id: code,
-              Typeobj.Name: name,
-            })

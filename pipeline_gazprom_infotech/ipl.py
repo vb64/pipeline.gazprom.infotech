@@ -1,6 +1,15 @@
 """Infotech IPL XML."""
 from lxml import etree as ET
-from . import InfotechBase, Typeobj
+from . import InfotechBase
+
+
+class Typeobj:
+    """Attributes of the TYPEOBJS IPL Infotech XML section."""
+
+    Section = 'TYPEOBJS'
+    Item = 'TYPEOBJ'
+    SubItem = 'TITLE'
+    Id = 'IDTYPEOBJ'
 
 
 class Kamera:
@@ -203,3 +212,12 @@ class Infotech(InfotechBase):
             defekt.attrib[key] = val
 
         return defekt
+
+    def add_types(self, it_dict):
+        """Add given dict to TYPEOBJS."""
+        for code, name in it_dict.items():
+            item = ET.SubElement(self.typobjs, Typeobj.Item, {
+              Typeobj.Id: code,
+            })
+            subitem = ET.SubElement(item, Typeobj.SubItem)
+            subitem.text = name
