@@ -25,3 +25,8 @@ class InfotechBase:
         """
         with open(file_name, 'wb') as out:
             out.write(ET.tostring(self.root, xml_declaration=True, encoding=encoding, pretty_print=True))
+
+    def set_attibs(self, item, attr_dict):
+        """Set attributes of given xml item."""
+        for key, val in attr_dict.items():
+            item.attrib[key] = val

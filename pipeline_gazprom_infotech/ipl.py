@@ -133,8 +133,7 @@ class Infotech(InfotechBase):
 
     def set_ipl(self, attr_dict):
         """Set attributes for IPL section."""
-        for key, val in attr_dict.items():
-            self.root.attrib[key] = val
+        self.set_attibs(self.root, attr_dict)
 
     def add_pigpass(self, attr_dict):
         """Add PASS item with given attributes to PIGPASS section."""
@@ -150,8 +149,7 @@ class Infotech(InfotechBase):
           PigPass.ObslType: "",
         }
         pigpass = ET.SubElement(self.pigpass, PigPass.Title, attribs)
-        for key, val in attr_dict.items():
-            pigpass.attrib[key] = val
+        self.set_attibs(pigpass, attr_dict)
 
         return pigpass
 
@@ -168,8 +166,7 @@ class Infotech(InfotechBase):
           Weld.Rem: "",
         }
         weld = ET.SubElement(self.welds, Weld.Title, attribs)
-        for key, val in attr_dict.items():
-            weld.attrib[key] = val
+        self.set_attibs(weld, attr_dict)
 
         return weld
 
@@ -183,8 +180,7 @@ class Infotech(InfotechBase):
           LineObj.Rem: "",
         }
         lobj = ET.SubElement(self.lineobjs, LineObj.Title, attribs)
-        for key, val in attr_dict.items():
-            lobj.attrib[key] = val
+        self.set_attibs(lobj, attr_dict)
 
         return lobj
 
@@ -208,8 +204,7 @@ class Infotech(InfotechBase):
           Defect.Method: "",
         }
         defekt = ET.SubElement(self.defekts, Defect.Title, attribs)
-        for key, val in attr_dict.items():
-            defekt.attrib[key] = val
+        self.set_attibs(defekt, attr_dict)
 
         return defekt
 
