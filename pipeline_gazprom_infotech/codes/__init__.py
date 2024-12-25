@@ -10,16 +10,23 @@ from .feature import Feature
 NAME = {
 
   # PigType
-  PigType.MFL: "Дефектоскоп магнитный продольного намагничивания",
+  PigType.COMMON: "Дефектоскоп",
   PigType.TFI: "Дефектоскоп магнитный поперечного намагничивания",
-  PigType.CALIPER_MECH: "Рычажный (профилемер)",
-  PigType.NAVIGATE: "Поршень навигационно-топографический",
-  PigType.ULTRASONIC: "Ультразвуковой дефектоскоп",
+  PigType.MFL: "Дефектоскоп магнитный продольного намагничивания",
+  PigType.INTRO: "Интроскоп",
+  PigType.COMPLEX: "Комплекс",
+  PigType.MAGN_CLEAN: "Магнитный очистной",
   PigType.CALIPER_MAGN: "Магнитный профилемер",
-  PigType.EMAP: "Дефектоскоп электромагнитный акустический",
-  PigType.COMBO: "Комбинированный дефектоскоп",
   PigType.CLEANER: "Очистной скребок",
+  PigType.TOPOGRAPH: "Поршень навигационно-топографический",
+  PigType.NAVIGATE: "Поршень-дефектоскоп (навигационно-топографический)",
   PigType.CALIPER_TOOL: "Поршень-шаблон",
+  PigType.CALIPER_VTD: "Профилемер внутритрубный механический",
+  PigType.CALIPER_MECH: "Рычажный (профилемер)",
+  PigType.ULTRASONIC: "Ультразвуковой дефектоскоп",
+  PigType.EXPERIMENTAL: "Экспериментальный",
+  # PigType.EMAP: "Дефектоскоп электромагнитный акустический",
+  # PigType.COMBO: "Комбинированный дефектоскоп",
 
   # PassType
   PassType.COMPLEX: "Комплексное внутритрубное обследование",
