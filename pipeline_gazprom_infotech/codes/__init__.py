@@ -38,6 +38,13 @@ NAME = {
   Tube.UNKNOWN: "Неопределенная секция",
   Tube.ODNOSHOV: "Одношовная",
   Tube.SPIRAL: "Спиралешовная",
+  Tube.DIRECT: "Прямошовная",
+  Tube.VALVE: "Кран-секция",
+  Tube.BRANCH: "Тройник-секция",
+  Tube.SEGMENT: "Сегментная вставка",
+  Tube.CURVE0: "Отвод холодного гнутья бесшовный",
+  Tube.CURVE1: "Отвод холодного гнутья одношовный",
+  Tube.CURVE2: "Отвод холодного гнутья двухшовный",
 
   # Company
   Company.BSPC: "BSPC B.V",
