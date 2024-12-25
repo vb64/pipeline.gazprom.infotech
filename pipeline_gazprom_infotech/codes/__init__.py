@@ -29,15 +29,19 @@ NAME = {
   # PigType.COMBO: "Комбинированный дефектоскоп",
 
   # PassType
+  PassType.DETAIL: "Детальное комплексное обследование",
   PassType.COMPLEX: "Комплексное внутритрубное обследование",
   PassType.COMPLEX_SKS: "Комплексное внутритрубное обследование + СКС",
   PassType.COMPLEX_NAV: "Комплексное внутритрубное обследование+навигация",
+  PassType.COMPLEX_COMM: "Комплексное обследование",
+  PassType.CORROZ: "Коррозионное обследование",
   PassType.NAVIGATE: "Навигационно-профильное обследование",
+  PassType.REPEAT: "Повторное обследование",
   PassType.CALIPER: "Профильное обследование",
   PassType.TFI: "Стресc-коррозионное обследование",
   PassType.ULTRASONIC: "Ультразвуковое обследование (УЗК)",
-  PassType.EXPERIMENTAL: "Экспериментальное обследование",
   PassType.EMAP: "ЭМАП-обследование",
+  PassType.EXPERIMENTAL: "Экспериментальное обследование",
 
   # Tube
   Tube.BEZSHOV: "Бесшовная",
